@@ -1,7 +1,7 @@
 from shop import Shop
-from config import Config
+from config import config
 
-app = Shop(Config)
+app = Shop(config['default'])
 
 if __name__ == "__main__":
     app.start().run()
