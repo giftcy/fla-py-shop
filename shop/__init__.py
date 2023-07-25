@@ -1,5 +1,16 @@
 from flask import Flask
 
+from flask_mail import Mail
+from flask_bootstrap import Bootstrap
+from flask_moment import Moment
+from flask_sqlalchemy import SQLAlchemy
+
+bootstrap = Bootstrap()
+moment = Moment()
+mail = Mail()
+db = SQLAlchemy()
+
+
 
 
 
@@ -20,7 +31,11 @@ class Shop():
         from .main import main as mb
         self.app.register_blueprint(mb)
 
-
+        #initializing flask extensions
+        bootstrap.init_app(self.app)
+        mail.init_app(self.app)
+        db.init_app(self.app)
+        moment.init_app(self.app)
 
         return self.app
 
