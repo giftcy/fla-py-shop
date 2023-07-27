@@ -31,6 +31,9 @@ class Shop():
         from .main import main as mb
         self.app.register_blueprint(mb)
 
+        from .auth import auth as ab
+        self.app.register_blueprint(ab,url_prefix='/auth')
+
         #initializing flask extensions
         bootstrap.init_app(self.app)
         mail.init_app(self.app)
