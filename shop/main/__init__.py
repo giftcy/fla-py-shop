@@ -5,4 +5,4 @@ from flask import Blueprint
 main = Blueprint('main', __name__)
 
 # imoorting the routes in this package
-from .views import *
+from . import views,errors
